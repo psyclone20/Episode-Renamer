@@ -116,7 +116,7 @@ then
         printf "Mismatch in number of files. Exiting.\n"
         exit
 else
-        echo "Renaming ${#titles[@]} files..."
+        echo "Renaming ${#titles[@]} episodes..."
         for i in "${!titles[@]}"; do
                 episode_no=$((i+1))
 		# Append '0' to start of episode number if it is less than 10
