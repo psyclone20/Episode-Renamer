@@ -24,7 +24,7 @@ A convenient script that gives meaningful names to episodes from your TV series 
 
 # Sample Usage
 ```
-$ ll
+$ ls -1
 ep1.mkv
 ep1.srt
 ep2.mkv
@@ -43,7 +43,7 @@ $ bash episode_renamer.sh -v mkv -s srt -p S01 -t titles.txt
 Renaming 3 episodes...
 Done!
 
-$ ll
+$ ls -1
 episode_renamer.sh
 S01E01 - First Episode.mkv
 S01E01 - First Episode.srt
