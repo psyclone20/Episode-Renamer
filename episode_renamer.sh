@@ -34,7 +34,7 @@ do
         esac
 done
 
-# Exit if required arguments are not passed
+# Exit if mandatory arguments are not passed
 if [ -z "$video_format" ] && [ -z "$subtitle_format" ]
 then
         printf "No video or subtitle format passed.\nExiting.\n"
@@ -112,26 +112,26 @@ fi
 
 if [ "$matchingFiles" = false ]
 then
-		# Exit if there is a mismatch in the number of titles and files
+	# Exit if there is a mismatch in the number of titles and files
         printf "Mismatch in number of files. Exiting.\n"
         exit
 else
         echo "Renaming ${#titles[@]} files..."
         for i in "${!titles[@]}"; do
                 episode_no=$((i+1))
-				# Append '0' to start of episode number if it is less than 10
+		# Append '0' to start of episode number if it is less than 10
                 if [ "$i" -lt 9 ];
                 then
                         episode_no="0$episode_no"
                 fi
 
-				# Rename video file
+		# Rename video file
                 if [ ! -z "$video_format" ]
                 then
                         mv "${episodes[$i]}" "${prefix}E$episode_no - ${titles[$i]}.$video_format"
                 fi
 
-				# Rename subtitle file
+		# Rename subtitle file
                 if [ ! -z "$subtitle_format" ]
                 then
                         mv "${subtitles[$i]}" "${prefix}E$episode_no - ${titles[$i]}.$subtitle_format"
